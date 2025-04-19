@@ -13,9 +13,14 @@ const Excalidraw = dynamic(
 
 const ExcalidrawWrapper: React.FC = () => {
   const [isMounted, setIsMounted] = useState(false)
+  const [initialData, setInitialData] = useState(null)
 
   useEffect(() => {
     setIsMounted(true)
+    fetch('/excali/index.excalidraw', { cache: 'no-cache' })
+      .then(res => res.json())
+      .then(data => setInitialData(data))
+      .catch(console.error)
   }, [])
 
   if (!isMounted) {
@@ -24,7 +29,7 @@ const ExcalidrawWrapper: React.FC = () => {
 
   return (
     <div style={{ height: '1000px' }}>
-      <Excalidraw />
+      <Excalidraw initialData={initialData} />
     </div>
   )
 }
