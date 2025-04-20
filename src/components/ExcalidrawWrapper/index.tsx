@@ -26,10 +26,14 @@ const ExcalidrawWrapper: React.FC = () => {
   if (!isMounted) {
     return null
   }
+  // 界面初始化位置可以采用下面参数进行画布缩放, 在初始化的initialData.appState中添加以下三个参数
+  // "zoom": 0.2,
+  // "scrollX": -1000,
+  // "scrollY": 1500
 
   return (
     <div style={{ height: '1000px' }}>
-      <Excalidraw initialData={initialData} />
+      <Excalidraw initialData={initialData} theme="dark" viewModeEnabled langCode="zh-CN" />
     </div>
   )
 }
