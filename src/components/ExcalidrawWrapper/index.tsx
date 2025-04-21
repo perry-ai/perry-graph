@@ -28,7 +28,7 @@ const ExcalidrawWrapper: React.FC = () => {
             // 界面初始化位置可以采用下面参数进行画布缩放, 在初始化的initialData.appState中添加以下三个参数
             zoom: 0.2, // 缩放级别
             scrollX: -1000, // 滚动位置X
-            scrollY: 1500, // 滚动位置Y
+            scrollY: 2500, // 滚动位置Y
           },
         }
         setInitialData(updatedData)
